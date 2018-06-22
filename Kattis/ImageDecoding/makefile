@@ -4,11 +4,11 @@ HPP_FILES = $(wildcard *.hpp)
 COMPILED_HPP_FILES = $(patsubst %.hpp,%.compiled_hpp,$(HPP_FILES))
 CPP_FILES = $(wildcard *.cpp)
 
-.PHONY: symmetricorder.output
-symmetricorder.output: symmetricorder makefile
+.PHONY: imagedecoding.output
+imagedecoding.output: imagedecoding makefile
 	@./$<
 
-symmetricorder: makefile $(CPP_FILES) $(COMPILED_HPP_FILES)
+imagedecoding: makefile $(CPP_FILES) $(COMPILED_HPP_FILES)
 	@$(CXX) $(CXXFLAGS) -O $(CPP_FILES) -o $@
 
 # This rule ensures header files build in their own right.
