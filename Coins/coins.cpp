@@ -30,21 +30,21 @@ int answer()
         ways++;
         break;
       }
-      for (int dime =0; dime <= amount; dime += 10)
+      for (int dime = 0; (quarter + dime) <= amount; dime += 10)
       {
         if ((quarter + dime) == amount)
         {
           ways++;
           break;
         }
-        for (int nickel =0; (dime + nickel) <= amount; nickel += 5)
+        for (int nickel = 0; (quarter + dime + nickel) <= amount; nickel += 5)
         {
-          if ((quarter + nickel + dime) == amount)
+          if ((quarter + dime + nickel) == amount)
           {
             ways++;
             break;
           }
-          for (int penny = 0; (dime + nickel + penny) <= amount; penny++)
+          for (int penny = 0; (quarter + dime + nickel + penny) <= amount; penny++)
           {
             if ((quarter + dime + nickel + penny) == amount)
             {
